@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.1.0 http://maven.apache.org/xsd/settings-1.1.0.xsd">
+
+  <localRepository>/var/jenkins_home/.m2/repository</localRepository>
+
+  <servers>
+      <server>
+        <id>nexus-snapshots-repository</id>
+        <username>admin</username>
+        <password>admin123</password>
+      </server>
+      <server>
+        <id>nexus-releases-repository</id>
+        <username>admin</username>
+        <password>admin123</password>
+      </server>
+      <server>
+        <id>nexus-thirdparty-repository</id>
+        <username>admin</username>
+        <password>admin123</password>
+      </server>
+      <server>
+          <id>thirdparty</id>
+          <username>admin</username>
+          <password>admin123</password>
+      </server>
+  </servers>
+
+  <!-- Mirror all requests thru Nexus -->
+  <mirrors>
+     <mirror>
+       <id>nexus</id>
+       <mirrorOf>*</mirrorOf>
+       <url>http://nexus.joscha-burkholz.de/content/groups/public</url>
+           <!-- <url>https://nexus.example.local/content/groups/public</url> -->
+     </mirror>
+  </mirrors>
+
+  <profiles>
+     <profile>
+       <id>sonar</id>
+       <properties>
+         <sonar.host.url>sonar.joscha-burkholz.de</sonar.host.url>
+         <sonar.login>0d4be760b0804c38a77d66f44302c1dd1133c28b</sonar.login>
+       </properties>
+         <repositories>
+             <repository>
+                 <id>central</id>
+                 <url>http://central</url>
+                 <releases><enabled>true</enabled></releases>
+                 <snapshots><enabled>true</enabled></snapshots>
+             </repository>
+         </repositories>
+         <pluginRepositories>
+             <pluginRepository>
+                 <id>central</id>
+                 <url>http://central</url>
+                 <releases><enabled>true</enabled></releases>
+                 <snapshots><enabled>true</enabled></snapshots>
+             </pluginRepository>
+         </pluginRepositories>
+     </profile>
+  </profiles>
+  <activeProfiles>
+    <activeProfile>sonar</activeProfile>
+  </activeProfiles>
+
+</settings>
