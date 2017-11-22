@@ -31,7 +31,7 @@
      <mirror>
        <id>nexus</id>
        <mirrorOf>*</mirrorOf>
-       <url>http://nexus.joscha-burkholz.de/content/groups/public</url>
+       <url>http://joscha-burkholz.de:8081/content/groups/public</url>
            <!-- <url>https://nexus.example.local/content/groups/public</url> -->
      </mirror>
   </mirrors>
@@ -40,8 +40,8 @@
      <profile>
        <id>sonar</id>
        <properties>
-         <sonar.host.url>sonar.joscha-burkholz.de</sonar.host.url>
-         <sonar.login>0d4be760b0804c38a77d66f44302c1dd1133c28b</sonar.login>
+         <sonar.host.url>joscha-burkholz.de:9000</sonar.host.url>
+         <sonar.login>admin</sonar.login>
        </properties>
          <repositories>
              <repository>
